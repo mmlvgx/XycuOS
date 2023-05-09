@@ -5,11 +5,10 @@ public class Boot
     public static void BeforeStart()
     {
         Console.Title = "XycuOS";
-
         // Clears the console buffer
         Console.Clear();
 
-        var banner = new List<string>()
+        var bannerLines = new List<string>()
         {
             " █████ █████                                   ███████     █████████ ",
             "░░███ ░░███                                  ███░░░░░███  ███░░░░░███",
@@ -24,8 +23,8 @@ public class Boot
             "              ░░░░░░                                                 ",
         };
 
-        foreach(string line in banner)
-            Console.WriteLine(line);
+        foreach(string bannerLine in bannerLines)
+            Console.WriteLine(bannerLine);
     }
 
     public static void AfterStart()
