@@ -29,10 +29,6 @@ public class Boot
 
     public static void AfterStart()
     {
-        var commands = new List<Command>()
-        {
-            new Help()
-        };
         while (true)
         {
             Console.Write("XycuOS >>");
@@ -46,7 +42,7 @@ public class Boot
                 /*
                     Iterating the list to find the command
                 */
-                foreach (Command command in commands)
+                foreach (Command command in Globals.commands)
                 {
                     /* 
                         Running a command
