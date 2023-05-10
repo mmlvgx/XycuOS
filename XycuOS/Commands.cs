@@ -1,6 +1,6 @@
 namespace XycuOS;
 
-public class Globals
+public class Commands
 {
     public static List<Command> commands = new()
     {

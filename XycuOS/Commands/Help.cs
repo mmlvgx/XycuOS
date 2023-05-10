@@ -8,7 +8,7 @@ public class Help : Command
 
     public override void Run()
     {
-        foreach (Command command in Globals.commands)
+        foreach (Command command in Commands.commands)
         {
             string information =
                 $"・ {command.Name}\t{command.Description}";

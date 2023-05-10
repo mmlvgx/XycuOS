@@ -29,23 +29,50 @@ public class Boot
 
     public static void AfterStart()
     {
+        var isReady = false;
+
+        while (isReady is false)
+        {
+            Console.Write("User name: ");
+            var userName = Console.ReadLine();
+
+            Console.Write("User pass: ");
+            var userPass = Console.ReadLine();
+
+            if (userName is not null && userPass is not null)
+            {
+                Users.ChangeCurrentUser(new User(userName, userPass));
+                /*
+                    Exit the loop
+                */
+                isReady = true;
+            }
+        }
+        /*
+            Clears the console buffer
+        */
+        Console.Clear();
+
+        var currentUser = Users.currentUser;
+
         while (true)
         {
-            Console.Write("XycuOS >>");
-            var line = Console.ReadLine();
+            if (currentUser is not null)
+                Console.Write($"{currentUser.Name} XycuOS >>");
 
+            var line = Console.ReadLine();
             /*
                 Check if the string is not null or empty
             */
-            if (!string.IsNullOrEmpty(line))
+            if (line is not null)
             {
                 /*
-                    Iterating the list to find the command
+                    Iterate the list to find the command
                 */
-                foreach (Command command in Globals.commands)
+                foreach (Command command in Commands.commands)
                 {
                     /* 
-                        Running a command
+                        Run a command
                     */
                     if (line.StartsWith(command.Name))
                     {
