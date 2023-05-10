@@ -6,4 +6,4 @@ XycuOS is a best modern Operating System Simulation
 ・ Time\
 ・ Date
 
-![preview](assets/image.png)
+![preview](assets/preview.png)
