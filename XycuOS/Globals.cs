@@ -6,5 +6,6 @@ public class Globals
     {
         new Help(),
         new Time(),
+        new Date(),
     };
 }

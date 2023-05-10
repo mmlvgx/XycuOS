@@ -11,7 +11,7 @@ public class Help : Command
         foreach (Command command in Globals.commands)
         {
             string information =
-                $"{command.Name}\n\t{command.Description}";
+                $"・ {command.Name}\t{command.Description}";
 
             Console.WriteLine(information);
         }
