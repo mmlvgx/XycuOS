@@ -30,8 +30,13 @@ Currently, the program is not in the release
 ## Commands
 ・ Help\
 ・ Time\
-・ Date
+・ Date\
+・ Clear\
+・ CreateUser\
+・ DeleteUser\
+・ ChangeCurrentUser
 
+**OUTDATED**
 ![preview](Assets/preview.png)
 
 # Support
