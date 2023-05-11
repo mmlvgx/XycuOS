@@ -8,11 +8,10 @@ public class DateCommand : Command
     public override void Run()
     {
         DateTime localDateTime = DateTime.Now;
-        /*
-            MM   - month
-            dd   - day
-            yyyy - year
-        */
+
+        // MM   - month
+        // dd   - day
+        // yyyy - year
         string date = localDateTime.ToString("MM/dd/yyyy");
 
         Console.WriteLine(date);

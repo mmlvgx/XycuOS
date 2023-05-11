@@ -8,12 +8,11 @@ public class TimeCommand : Command
     public override void Run()
     {
         DateTime localDateTime = DateTime.Now;
-        /*
-            hh - hours
-            mm - minutes
-            ss - seconds
-            ff - milliseconds
-        */
+
+        // hh - hours
+        // mm - minutes
+        // ss - seconds
+        // ff - milliseconds
         string time = localDateTime.ToString("hh:mm:ss.ff");
 
         Console.WriteLine(time);

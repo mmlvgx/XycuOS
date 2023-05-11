@@ -1,6 +1,4 @@
-﻿using System.Reflection;
-
-namespace XycuOS
+﻿namespace XycuOS
 {
     public class Program
     {

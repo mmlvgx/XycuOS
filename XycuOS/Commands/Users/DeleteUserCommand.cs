@@ -7,14 +7,11 @@ public class DeleteUserCommand : Command
 
     public override void Run()
     {
-        /*
-            Get a User Name and User Pass from Standart Input Stream
-        */
         Console.Write("User name: ");
-        var userName = Console.ReadLine();
+        var userName = Standarts.ReadLine(isSecure:false);
 
         Console.Write("User pass: ");
-        var userPass = Console.ReadLine();
+        var userPass = Standarts.ReadLine(isSecure:true);
 
         Users.DeleteUser(userName, userPass);
     }

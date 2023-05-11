@@ -11,10 +11,10 @@ public class ChangeCurrentUserCommand : Command
             Get a User Name and User Pass from Standart Input Stream
         */
         Console.Write("User name: ");
-        var userName = Console.ReadLine();
+        var userName = Standarts.ReadLine(isSecure:false);
 
         Console.Write("User pass: ");
-        var userPass = Console.ReadLine();
+        var userPass = Standarts.ReadLine(isSecure:true);
 
         Users.ChangeCurrentUser(userName, userPass);
     }
