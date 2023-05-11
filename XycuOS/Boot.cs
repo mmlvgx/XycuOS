@@ -33,53 +33,60 @@ public class Boot
 
         while (isReady is false)
         {
+            /*
+                Get a User Name and User Pass from Standart Input Stream
+            */
             Console.Write("User name: ");
             var userName = Console.ReadLine();
 
             Console.Write("User pass: ");
             var userPass = Console.ReadLine();
-
-            if (userName is not null && userPass is not null)
-            {
-                Users.ChangeCurrentUser(new User(userName, userPass));
-                /*
-                    Exit the loop
-                */
-                isReady = true;
-            }
+            /*
+                Creating a new User
+            */
+            var user = Users.CreateUser(userName, userPass);
+            /*
+                Check if the new User is not null
+                (Feature of Users CreateUser method)
+            */
+            if (user is null) continue;
+            /*
+                Change current user to a new
+            */
+            Users.ChangeCurrentUser(user.Name, user.Pass);
+            /*
+                Exit the loop
+            */
+            isReady = true;
         }
         /*
             Clears the console buffer
         */
         Console.Clear();
 
-        var currentUser = Users.currentUser;
-
         while (true)
         {
-            if (currentUser is not null)
-                Console.Write($"{currentUser.Name} XycuOS >>");
+            var currentUser = Users.CurrentUser;
+            /*
+                Check if a current User is null
+            */
+            if (currentUser is null) return;
 
+            Console.Write($"{currentUser.Name} XycuOS >>");
             var line = Console.ReadLine();
             /*
-                Check if the string is not null or empty
+                Check if the string is null
             */
-            if (line is not null)
-            {
-                /*
-                    Iterate the list to find the command
-                */
-                foreach (Command command in Commands.commands)
-                {
-                    /* 
-                        Run a command
-                    */
-                    if (line.StartsWith(command.Name))
-                    {
-                        command.Run();
-                    }
-                }
-            }
+            if (line is null) continue;
+            /*
+                Check if the line is in Commands Dictionary
+            */
+            var isInCommandDictionary = Commands.CommandsDictionary.ContainsKey(line);
+            if (isInCommandDictionary is false) continue;
+            /*
+                Finally run the command
+            */
+            Commands.CommandsDictionary[line].Run();
         }
     }
 

@@ -1,8 +1,8 @@
 namespace XycuOS;
 
-public class Time : Command
+public class TimeCommand : Command
 {
-    public static string name = "time";
+    public static string name = "Time";
     public static string description = "Displays current system time";
 
     public override void Run()
@@ -19,5 +19,5 @@ public class Time : Command
         Console.WriteLine(time);
     }
 
-    public Time() : base(name, description) {}
+    public TimeCommand() : base(name, description) {}
 }

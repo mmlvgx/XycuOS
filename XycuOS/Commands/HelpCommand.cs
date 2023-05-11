@@ -1,14 +1,14 @@
 namespace XycuOS;
 
-public class Help : Command
+public class HelpCommand : Command
 {
-    public static string name = "help";
+    public static string name = "Help";
     public static string description =
         "Displays information about all available commands";
 
     public override void Run()
     {
-        foreach (Command command in Commands.commands)
+        foreach (Command command in Commands.CommandsList)
         {
             string information =
                 $"・ {command.Name}\t{command.Description}";
@@ -17,5 +17,5 @@ public class Help : Command
         }
     }
 
-    public Help() : base(name, description) {}
+    public HelpCommand() : base(name, description) {}
 }

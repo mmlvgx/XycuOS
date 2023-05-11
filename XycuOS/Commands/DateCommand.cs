@@ -1,8 +1,8 @@
 namespace XycuOS;
 
-public class Date : Command
+public class DateCommand : Command
 {
-    public static string name = "date";
+    public static string name = "Date";
     public static string description = "Displays current system date";
 
     public override void Run()
@@ -18,5 +18,5 @@ public class Date : Command
         Console.WriteLine(date);
     }
 
-    public Date() : base(name, description) {}
+    public DateCommand() : base(name, description) {}
 }
